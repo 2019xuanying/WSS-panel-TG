@@ -97,7 +97,7 @@ async function initTelegramBot(context) {
     console.log(`[TG_BOT] 正在启动 Telegram 机器人... (Admin ID: ${adminId})`);
 
     // 2. 创建 Bot 实例 (Polling 模式)
-    const bot = new TelegramBot(token, { polling: true });
+    const bot = new TelegramBot(token, { polling: true, request: { family: 4 } });
     
     // --- 权限校验中间件 ---
     const checkAdminPermission = (msg) => {
