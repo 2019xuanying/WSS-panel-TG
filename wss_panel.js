@@ -1974,7 +1974,7 @@ api.post('/users/set_settings', async (req, res) => {
                 await safeRunCommand(['pkill', '-9', '-u', username]);
             }
             const { success: groupSuccess, output: groupOutput } = await safeRunCommand(groupCmd);
-            if (!success) {
+            if (!groupSuccess) {
                 if (!groupOutput.includes("is not a member")) {
                     throw new Error(`Failed to update group membership: ${groupOutput}`);
                 }
